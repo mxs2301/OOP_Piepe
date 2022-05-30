@@ -45,15 +45,16 @@ public:
         return copy;
     }
 
-/*
-    Wordsequence& operator=(const Wordsequence &input){
+
+    Wordsequence& operator = (const Wordsequence &input){
         if(this == &input)
             return *this;
         delete[] words;
         words = new T[input.size];
-        words = createArr(input.size, words);
+        this->size = input.size;
+        words = createArr(input.size, input.words);
         return *this;
-    } */
+    }
 
     friend std::ostream& operator<<(std::ostream& out, Wordsequence& sequence){
         for(int i = 0; i<sequence.getSize(); i++){
@@ -103,7 +104,6 @@ public:
             delete[] words;
     }
 };
-
-
+typedef Wordsequence<hfu::Person> SimpleVector;
 
 #endif //CODE_WORDSEQUENCE_H

@@ -87,14 +87,14 @@ void test_string(){
 void test_Simple(){
 
     hfu::Person* persons = createArr();
-    Wordsequence<hfu::Person> list(persons, 3);
+    SimpleVector list(persons, 3);
     assert(list.getSize()==3);
     assert(list[2].getFirstname()=="Donald");
     assert(list[2].getLastname()=="Duck");
     list[2]=persons[3];
     assert(list[2].getFirstname()=="Micky");
     assert(list[2].getLastname()=="Maus");
-    Wordsequence<hfu::Person> copy;
+    SimpleVector copy;
 
     assert(copy.getSize()==0);
     copy = list;
@@ -110,9 +110,8 @@ void test_Simple(){
 }
 
 void runing() {
-
-    test_sort();
     test_string();
-    std::string Arr[] = {"Mathe", "Deutsch", "Spanisch"};
-
+    test_sort();
+    test_Simple();
+    printf("Finished\n");
 }

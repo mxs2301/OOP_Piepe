@@ -8,7 +8,6 @@ int main() {
 
   std::cout << "...starting\n";
 
-  printf("Geschlechtsverkehr\n");
   runing();
 
   std::cout << "...finishing\n";
